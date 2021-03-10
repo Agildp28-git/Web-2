@@ -1,58 +1,88 @@
+<?php
+    // Belajar Membuat Kalkulator Sederhana dengan php
+
+    //tampung inputan textfield ke dalam variabel
+    $angka1 = @$_POST['tangka1'];
+    $angka2 = @$_POST['tangka2'];
+    $hasil =  @$_POST['hasil'];
+
+    //uji jika tombol tambah diklik
+    if(isset($_POST['btambah']))
+    {
+        $hasil = $angka1 + $angka2;
+    }
+
+    //uji jika tombol kurang diklik
+    if(isset($_POST['bkurang']))
+    {
+        $hasil = $angka1 - $angka2;
+    }
+
+    //uji jika tombol bagi diklik
+    if(isset($_POST['bbagi']))
+    {
+        $hasil = $angka1 / $angka2;
+    }
+
+    //uji jika tombol kali diklik
+    if(isset($_POST['bkali']))
+    {
+        $hasil = $angka1 * $angka2;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
- <title>Kalkulator Sederhana by EkoNyontek23</title>
+    <title>Belajar membuat Kalkulator Sederhana</title>
 </head>
 <body>
-<form action="" method="POST">
- <table>
- <tr><td>Bilangan 1 </td>
- <td>:</td>
-<td><input type="text" name="bilangan1"></td>
-</tr>
- <tr>
-<td>Aksi</td>
-<td>:</td>
- <td><select name="pilih">
-  <option value="+">+</option>
-  <option value="-">-</option>
-  <option value="*">*</option>
-  <option value="/">/</option>
- </select></td></tr>
- <tr>
- <td>Bilangan 2</td>
- <td> : </td>
- <td><input type="text" name="bilangan2"></td></tr>
- <tr><td></td>
- <td>:</td>
- <td><input type="submit" name="hitung" value="Hitung"></td>
- </tr><table></form>
+
+<form method="post">
+    <table align="center" border="0">
+        <tr>
+            <td align="center" colspan="3" bgcolor="pink"> Agil Kalkulator</td>
+        </tr>
+        <tr>
+            <td colspan="3"> <hr> </td>
+        </tr>
+        <tr>
+            <td>Angka 1</td>
+            <td>:</td>
+            <td>
+                <input type="text" name="tangka1" value="<?=$angka1?>">
+            </td>
+        </tr>
+        <tr>
+            <td>Angka 2</td>
+            <td>:</td>
+            <td>
+                <input type="text" name="tangka2" value="<?=$angka2?>">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="submit" name="btambah" value="+">
+                <input type="submit" name="bkurang" value="-">
+                <input type="submit" name="bbagi" value="/">
+                <input type="submit" name="bkali" value="*">
+            </td>
+        </tr>
+        <tr>
+            <td>Hasil</td>
+            <td>:</td>
+            <td>
+                <input type="text" name="thasil" value="<?=$hasil?>">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3"> <hr> </td>
+        </tr>
+    </table>
+</form>
+
+
 </body>
 </html>
-
-<?php
- if(isset($_POST['hitung'])){
-  $bil1 = $_POST['bilangan1'];
-  $bil2 = $_POST['bilangan2'];
-  $pilih = $_POST['pilih'];
-
-  if($pilih){
-   if($bil1 == "" || $bil2 == ""){
-    ?> <script>alert("Nilai nya belum diisi!"); </script> <?php
-   }elseif($pilih == '+'){
-    $hasil = $bil1 + $bil2;
-    echo "Hasil pertambahan $bil1 dengan $bil2 = ".$hasil;
-   }elseif($pilih == '-'){
-    $hasil = $bil1 - $bil2;
-    echo "Hasil pengurangan $bil1 dengan $bil2 = ".$hasil;
-   }elseif($pilih == '*'){
-    $hasil = $bil1 * $bil2;
-    echo "Hasil perkalian $bil1 dengan $bil2 = ".$hasil;
-   }elseif($pilih == '/'){
-    $hasil = $bil1 / $bil2;
-    echo "Hasil pembagian $bil1 dengan $bil2 = ".$hasil;
-   }
-  }
- }
-
-?>
