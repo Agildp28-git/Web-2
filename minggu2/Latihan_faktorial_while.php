@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FAKTORIAL MENGGUNAKAN WHILE</title>
+<title>Faktorial menggunakan WHILE</title>
 </head>
 <body>
-<h1>FAKTORIAL MENGGUNAKAN WHILE</h1> 
+<h1>Faktorial menggunakan WHILE</h1> 
 </head>
 <body>
 <form name="frm01" method="post">

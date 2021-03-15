@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FAKTORIAL MENGGUNAKAN FOR</title>
+<title>Faktorial, menggunakan FOR</title>
 </head>
 <body>
-<h1>FAKTORIAL MENGGUNAKAN FOR</h1> 
+<h1>Faktorial menggunakan FOR</h1> 
 <form name="frm01" method="post">
 <table>
 <tr>
